@@ -44,7 +44,7 @@
   },
   "dependencies": {
     "@smoothjs/config": "^0.1.0",
-    "@smoothjs/smooth": "^0.1.0",
+    "@smoothjs/smooth": "^0.1.2",
     "express": "^4.17.1",
     "multer": "^1.4.2",
     "typescript-ioc": "^3.2.2"
