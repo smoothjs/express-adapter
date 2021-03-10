@@ -1,0 +1,71 @@
+{
+  "name": "@smoothjs/express-adapter",
+  "version": "0.1.0",
+  "description": "Smooth modern NodeJS web framework (@express-adapter)",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "test": "mocha --require ts-node/register \"./tests/*.spec.ts\" \"./tests/**/*.spec.ts\"",
+    "build": "rimraf build && tsc -p tsconfig.json",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext=.ts",
+    "commit": "git-cz",
+    "release": "np"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "AbdallahMohammed <abdallah.r660@gmail.com>"
+  ],
+  "license": "MIT",
+  "files": [
+    "build/"
+  ],
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "nyc": {
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "dependencies": {
+    "@smoothjs/config": "^0.1.0",
+    "@smoothjs/smooth": "^0.1.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "typescript-ioc": "^3.2.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/mocha": "7.0.2",
+    "@types/multer": "^1.4.5",
+    "@types/node": "10.17.24",
+    "@types/require-all": "3.0.1",
+    "copyfiles": "2.4.1",
+    "eslint": "7.21.0",
+    "eslint-config-prettier": "7.2.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "japa": "3.1.1",
+    "mocha": "8.2.1",
+    "np": "7.4.0",
+    "prettier": "2.2.1",
+    "reflect-metadata": "0.1.13",
+    "rimraf": "2.6.3",
+    "ts-node": "9.0.0",
+    "typescript": "4.0.7"
+  }
+}
