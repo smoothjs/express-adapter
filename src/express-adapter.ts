@@ -119,4 +119,8 @@ export class ExpressAdapter extends HttpAdapter {
 
     return new Promise((resolve) => this.httpServer.close(resolve))
   }
+
+  public getRequestHostname(request: any): string {
+    return request.hostname
+  }
 }
