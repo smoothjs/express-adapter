@@ -71,7 +71,7 @@ jobs:
       - name: Run unit tests
         run: npm run test
       - name: Send code coverage report to Codecov
-        uses: codecov/codecov-action@v1.5.0
+        uses: codecov/codecov-action@v2.1.0
         with:
           token: ${{secrets.CODECOV_TOKEN}}
           file: coverage/*.json
