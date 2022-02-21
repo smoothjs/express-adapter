@@ -3,15 +3,11 @@ import multer from 'multer'
 import { MulterOptions } from './interfaces/multer-options'
 import { transformException } from './utils'
 import { MulterField } from './interfaces/multer-field'
-import { Config } from '@smoothjs/config'
-import { Container } from 'typescript-ioc'
-
-const config: Config = Container.get(Config)
 
 export function AnyFilesInterceptor(localOptions?: MulterOptions): MethodDecorator {
-  const options: MulterOptions = config.get('multer', {
+  const options: MulterOptions = {
     dest: './uploads',
-  })
+  }
 
   const upload = (multer as any)({
     ...options,
@@ -33,9 +29,9 @@ export function FileFieldsInterceptor(
   uploadFields: MulterField[],
   localOptions?: MulterOptions
 ): MethodDecorator {
-  const options: MulterOptions = config.get('multer', {
+  const options: MulterOptions = {
     dest: './uploads',
-  })
+  }
 
   const upload = (multer as any)({
     ...options,
@@ -54,9 +50,9 @@ export function FileFieldsInterceptor(
 }
 
 export function FileInterceptor(fieldName: string, localOptions?: MulterOptions): MethodDecorator {
-  const options: MulterOptions = config.get('multer', {
+  const options: MulterOptions = {
     dest: './uploads',
-  })
+  }
 
   const upload = (multer as any)({
     ...options,
@@ -79,9 +75,9 @@ export function FilesInterceptor(
   maxCount?: number,
   localOptions?: MulterOptions
 ): MethodDecorator {
-  const options: MulterOptions = config.get('multer', {
+  const options: MulterOptions = {
     dest: './uploads',
-  })
+  }
 
   const upload = (multer as any)({
     ...options,

@@ -1,4 +1,5 @@
 export { ExpressAdapter } from './express-adapter'
 export { MulterExceptions } from './exception'
+export { ExpressProvider } from './provider'
 export * from './multer'
 export * from './utils'

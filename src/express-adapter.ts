@@ -1,9 +1,13 @@
 import * as http from 'http'
 import * as https from 'https'
 import express from 'express'
+import { Config } from '@smoothjs/config'
 import * as bodyParser from 'body-parser'
 import { HttpAdapter, RequestHandler, isFunction } from '@smoothjs/smooth'
+import { Container, OnlyInstantiableByContainer, Singleton } from 'typescript-ioc'
 
+@OnlyInstantiableByContainer
+@Singleton
 export class ExpressAdapter extends HttpAdapter {
   constructor(instance?: any) {
     super(instance || express())
@@ -51,11 +55,11 @@ export class ExpressAdapter extends HttpAdapter {
     return response.append(name, value)
   }
 
-  public initHttpServer(options: any) {
-    const isHttpsEnabled = options && options.httpsOptions
+  public initHttpServer() {
+    const isHttpsEnabled = Container.get(Config).get('app.https.enabled', false)
 
     if (isHttpsEnabled) {
-      this.httpServer = https.createServer(options.httpsOptions, this.getInstance())
+      this.httpServer = https.createServer(Container.get(Config).get('app.https.options', {}), this.getInstance())
 
       return
     }
