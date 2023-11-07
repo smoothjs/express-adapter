@@ -50,7 +50,7 @@
     "typescript-ioc": "^3.2.2"
   },
   "devDependencies": {
-    "@types/express": "4.17.12",
+    "@types/express": "4.17.21",
     "@types/mocha": "8.2.2",
     "@types/multer": "1.4.5",
     "@types/node": "14.17.1",
